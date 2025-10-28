@@ -1,0 +1,45 @@
+﻿@page
+@model ExampleApplication.Pages.Products.EditClassModel
+@{
+    ViewData["Title"] = "Редактирование товара";
+}
+@{
+    <div class="mt-4">
+        <h2>Редактирование товара с классом</h2>
+
+        <div class="row">
+        <div class="col-12">
+                <div>@TempData["Response"]</div>
+        </div>
+            <div class="col-12">
+                <form method="post">
+                    <input asp-for="MyProduct.Id" type="hidden" />
+                    <div class="mb-3">
+                        <label for="input1" class="form-label">Название товара</label>
+                        <input asp-for="MyProduct.Name" id="input1" placeholder="Название товара" type="text" class="text-field" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="input2" class="form-label">Код товара</label>
+                        <input asp-for="MyProduct.Code" id="input2" placeholder="Код товара" type="text" class="text-field" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="input3" class="form-label">Цена</label>
+                        <input asp-for="MyProduct.Price" id="input3" placeholder="Цена" type="number" class="text-field" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="input4" class="form-label">Количество</label>
+                        <input asp-for="MyProduct.Quantity" id="input4" placeholder="Количество" type="number" class="text-field" />
+                    </div>
+                    <div class="field">
+                        <button type="submit">Отправить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12">
+                <div>
+                    <a href="/Products/Index">Вернутся назад</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

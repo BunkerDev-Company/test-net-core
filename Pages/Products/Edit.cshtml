@@ -1,0 +1,32 @@
+﻿@page
+@model ExampleApplication.Pages.Products.EditModel
+@{
+    <div class="mt-4">
+        <h2>Редактирование товара</h2>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="">@Model.NameProduct</div>
+                <div class="">@Model.CodeProduct</div>
+            </div>
+            <div class="col-12">
+                <form method="post">
+                    <div class="field">
+                        <input asp-for="NameProduct" name="NameProduct" placeholder="Название товара" type="text" class="text-field" />
+                    </div>
+                    <div class="field">
+                        <input asp-for="CodeProduct" name="CodeProduct" placeholder="Код товара" type="text" class="text-field" />
+                    </div>
+                    <div class="field">
+                        <button type="submit">Отправить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12">
+                <div>
+                    <a href="/Products/Index">Вернутся назад</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

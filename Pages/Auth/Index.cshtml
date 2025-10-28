@@ -1,0 +1,37 @@
+﻿@page
+@model ExampleApplication.Pages.Auth.IndexModel
+@{
+    var zero = 0;
+    <div class="mt-4">
+        <h2>Авторизация</h2>
+        @zero
+        @if (Model.isAuth) {
+            <div>
+                <h1>Вы авторизованы!</h1>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-12">
+                    <form method="post">
+                        <div class="field">
+                            <input asp-for="Password" placeholder="Введите пароль" type="text" class="text-field" />
+                        </div>
+                        <div class="field">
+                            <button type="submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+                @if (Model.isError)
+                {
+                    <div class="col-12">
+                        <p>Введен неверный пароль</p>
+                    </div>
+                }
+                
+            </div>
+        }
+        
+    </div>
+}
